@@ -1,0 +1,1 @@
+print('we IS smart, right?')
