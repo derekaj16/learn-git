@@ -1,3 +1,11 @@
+#Derek Johnson, David Murdock, Ella Nanto, Jared Bare
+
+# Creating a class for Orders
+# You are the owner of a very successful hamburger restaurant. Your faithful customers
+# line up every day and eat dozens of burgers. You are writing a program to track exactly
+# how many hamburgers each customer eats. 
+
+
 import random
 import math
 
@@ -10,6 +18,8 @@ class Order :
     def __init__(self) :
         self.burger_count = self.randomBurgers()
 
+
+# Creating a class for Orders
 class Person :
     customer_name = ''
 
@@ -29,14 +39,28 @@ class Customer(Person) :
 
 
 queueOfCustomers = list()
+
 customerInfo = dict()
 
 for iCount in range(0,100) :
     newCustomer = Customer()
+
     additionalBurgers = newCustomer.order.burger_count
+
     queueOfCustomers.append(newCustomer)
-    customerInfo[newCustomer.customer_name] += additionalBurgers
+
+    if newCustomer.customer_name in customerInfo :
+        customerInfo[newCustomer.customer_name] += newCustomer.order.burger_count
+    else :
+        customerInfo[newCustomer.customer_name] = newCustomer.order.burger_count
+        
 
 listSortedCustomers = sorted(customerInfo.items(), key=lambda x: x[1], reverse=True)
 
+for customer in listSortedCustomers :
+    print(customer[0].ljust(19) + '\t' + str(customer[1]))
+
+
+# for iCount in range(0, len(queueOfCustomers)) :
+#     print(queueOfCustomers[iCount].customer_name)
 
