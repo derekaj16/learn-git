@@ -13,7 +13,7 @@ class Order :
 class Person :
     customer_name = ''
 
-    def randomName() :
+    def randomName(self) :
         asCustomers = ["Jefe", "El Guapo", "Lucky Day", "Ned Nederlander", "Dusty Bottoms", "Harry Flugleman", "Carmen", "Invisible Swordsman", "Singing Bush"]
         return asCustomers[math.floor(random.randint(0,8))]
     
@@ -21,16 +21,22 @@ class Person :
         self.customer_name = self.randomName()
 
 class Customer(Person) :
-    order = Order()
-
+    order = 0
     def __init__(self) :
         super().__init__()
+        self.order = Order()
 
 
 
-queue = list()
-dictionary = dict()
+queueOfCustomers = list()
+customerInfo = dict()
 
 for iCount in range(0,100) :
-    queue.append(Customer())
+    newCustomer = Customer()
+    additionalBurgers = newCustomer.order.burger_count
+    queueOfCustomers.append(newCustomer)
+    customerInfo[newCustomer.customer_name] += additionalBurgers
+
+listSortedCustomers = sorted(customerInfo.items(), key=lambda x: x[1], reverse=True)
+
 
