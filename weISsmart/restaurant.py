@@ -9,7 +9,7 @@ class Order :
 
     def __init__(self) :
         self.burger_count = self.randomBurgers()
-print('hello')
+
 class Person :
     customer_name = ''
 
