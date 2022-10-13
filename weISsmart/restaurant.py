@@ -9,6 +9,7 @@
 import random
 import math
 
+# Declaring classes
 class Order :
     burger_count = 0
 
@@ -18,8 +19,6 @@ class Order :
     def __init__(self) :
         self.burger_count = self.randomBurgers()
 
-
-# Creating a class for Orders
 class Person :
     customer_name = ''
 
@@ -37,30 +36,23 @@ class Customer(Person) :
         self.order = Order()
 
 
-
+# Initialize variables
 queueOfCustomers = list()
-
 customerInfo = dict()
 
+# Begin program. Adding customers to the line and getting their info
 for iCount in range(0,100) :
-    newCustomer = Customer()
+    queueOfCustomers.append(Customer())
 
-    additionalBurgers = newCustomer.order.burger_count
-
-    queueOfCustomers.append(newCustomer)
-
-    if newCustomer.customer_name in customerInfo :
-        customerInfo[newCustomer.customer_name] += newCustomer.order.burger_count
+for customer in queueOfCustomers :
+    if customer.customer_name in customerInfo :
+        customerInfo[customer.customer_name] += customer.order.burger_count
     else :
-        customerInfo[newCustomer.customer_name] = newCustomer.order.burger_count
+        customerInfo[customer.customer_name] = customer.order.burger_count
         
-
+# Sorting the customer info we obtained
 listSortedCustomers = sorted(customerInfo.items(), key=lambda x: x[1], reverse=True)
 
+# Print results
 for customer in listSortedCustomers :
     print(customer[0].ljust(19) + '\t' + str(customer[1]))
-
-
-# for iCount in range(0, len(queueOfCustomers)) :
-#     print(queueOfCustomers[iCount].customer_name)
-
