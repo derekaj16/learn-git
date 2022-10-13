@@ -4,7 +4,6 @@
 # certain number of burgers. We then aggregate their orders and 
 # give a summary at the end of the program
 
-
 import random
 import math
 
