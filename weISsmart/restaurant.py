@@ -28,7 +28,6 @@ class Person :
         self.customer_name = self.randomName()
 
 class Customer(Person) :
-    order = 0
     def __init__(self) :
         super().__init__()
         self.order = Order()
