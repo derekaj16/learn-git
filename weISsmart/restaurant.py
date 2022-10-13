@@ -1,9 +1,8 @@
-#Derek Johnson, David Murdock, Ella Nanto, Jared Bare
-
-# Creating a class for Orders
-# You are the owner of a very successful hamburger restaurant. Your faithful customers
-# line up every day and eat dozens of burgers. You are writing a program to track exactly
-# how many hamburgers each customer eats. 
+# Derek Johnson, David Murdock, Ella Nanto, Jared Bare
+# IS403 - Section 003
+# This program adds customers to a line and randomly gives them a 
+# certain number of burgers. We then aggregate their orders and 
+# give a summary at the end of the program
 
 
 import random
